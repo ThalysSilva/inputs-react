@@ -10,6 +10,7 @@ import { Text5 } from '../Texts';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   validateFunctions?: ValidatorFunction[];
+  width?: number | 'full' | 'fit-content';
   handleRightIconClick?: () => void;
   handleLeftIconClick?: () => void;
   hideMessageValidation?: boolean;
@@ -17,7 +18,6 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   showValidationBar?: boolean;
   onRightIcon?: ReactElement;
   onLeftIcon?: ReactElement;
-  width?: number | 'full' | 'fit-content';
   labelString?: string;
   isRequired?: boolean;
   dataTestId?: string;

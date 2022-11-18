@@ -1,6 +1,6 @@
 import React from 'react';
 import {ItemValidator} from '../ItemValidator';
-import {H6} from '../Texts';
+import {Text5} from '../Texts';
 import {usePasswordValidationModern} from './hooks/usePasswordValidationModern';
 
 export type Props = {
@@ -11,7 +11,7 @@ export function PasswordValidationModern({passwordValue}: Props) {
     return (
         <div data-testid={'passwordValidation'} className={'flex flex-row bg-grayscale-800 rounded-xl p-3 h-fit w-full gap-8'}>
             <div className={'flex flex-col justify-start gap-2 w-fit'}>
-                <H6 className={'font-normal'}>{'Critérios mínimos:'}</H6>
+                <Text5 className={'font-normal'}>{'Critérios mínimos:'}</Text5>
                 <ItemValidator
                     idValidator={'moreThanEight'}
                     label={'8 caracteres'}
@@ -38,7 +38,7 @@ export function PasswordValidationModern({passwordValue}: Props) {
                 />
             </div>
             <div className={'flex flex-col justify-start gap-2 w-fit'}>
-                <H6 className={'text-grayscale-400 font-normal'}>{'Exemplo de senha: JOnny&D33p'}</H6>
+                <Text5 className={'text-grayscale-400 font-normal'}>{'Exemplo de senha: JOnny&D33p'}</Text5>
                 <ItemValidator
                     idValidator={'minimumOneLetterUpperCase'}
                     label={'1 letra maiúscula'}

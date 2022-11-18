@@ -1,19 +1,19 @@
 import React from 'react';
 
+import {useValidator} from '../../../../validators/hooks/useValidator';
 import {render, screen, waitFor} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import {InputModern, InputProps} from '..';
 import LockIcon from '../../../../assets/icon/Lock';
-import useValidator from '../../../../validators/hooks/useValidator';
+import userEvent from '@testing-library/user-event';
+import {Input, InputProps} from '..';
 
 const mockInputDefaultConfig: InputProps = {
     handleRightIconClick: undefined,
     handleLeftIconClick: undefined,
     placeholder: 'mockPlaceholder',
     hideMessageValidation: false,
+    showValidationBar: false,
     dataTestId: 'dataTestIdInputMock',
     highlightBorderError: false,
-    hideValidationBar: false,
     onRightIcon: undefined,
     onLeftIcon: undefined,
     name: 'InputNameMock',
@@ -25,9 +25,9 @@ const mockInputDefaultConfig: InputProps = {
     maxLength: 100,
 };
 
-const setup = (props: InputProps) => render(<InputModern {...props} />);
+const setup = (props: InputProps) => render(<Input {...props} />);
 
-describe(InputModern.name, () => {
+describe(Input.name, () => {
     it('Should be display component input in screen', () => {
         setup(mockInputDefaultConfig);
 
@@ -226,11 +226,11 @@ describe(InputModern.name, () => {
         await waitFor(() => expect(mockInputConfigToTest.onChange).toHaveBeenCalled());
     });
 
-    it('Should display ValidationBar if required is true and hideValidationBar is false', () => {
+    it('Should display ValidationBar if required is true and showValidationBar is true', () => {
         const mockInputConfigToTest: InputProps = {
             ...mockInputDefaultConfig,
             required: true,
-            hideValidationBar: false,
+            showValidationBar: true,
         };
 
         setup(mockInputConfigToTest);
@@ -238,11 +238,11 @@ describe(InputModern.name, () => {
         expect(screen.getByTestId('validationBar')).toBeInTheDocument();
     });
 
-    it('Should NOT display ValidationBar if required is true and hideValidationBar is true', () => {
+    it('Should NOT display ValidationBar if required is true and showValidationBar is false', () => {
         const mockInputConfigToTest: InputProps = {
             ...mockInputDefaultConfig,
             required: true,
-            hideValidationBar: true,
+            showValidationBar: false,
         };
 
         setup(mockInputConfigToTest);

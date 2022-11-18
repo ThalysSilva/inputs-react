@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { doNothing } from '../../../utils/functions';
+import { doNothing } from '../../../../utils/functions';
 
 type Props = {
   children: React.ReactNode;

@@ -44,15 +44,15 @@ export default function useInputNumberWithSpinner({ maxLength, max, min }: Props
 
   function decrementTotal() {
     const currentIp = parseInt(total) || 0;
-    let normalizedNewTota = '';
+    let normalizedNewTotal = '';
     let newTotal = 0;
     if (min) {
       newTotal = currentIp > min ? currentIp - 1 : min;
     } else {
       newTotal = currentIp.toString().length ? currentIp - 1 : 0;
     }
-    normalizedNewTota = addLeadingZeros(newTotal.toString(), validMaxLength);
-    setTotal(normalizedNewTota);
+    normalizedNewTotal = addLeadingZeros(newTotal.toString(), validMaxLength);
+    setTotal(normalizedNewTotal);
   }
   return { handleChange, decrementTotal, incrementTotal, handleBlur, total };
 }
