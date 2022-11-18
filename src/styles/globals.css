@@ -4,11 +4,6 @@
 
 @import './assets/spinner.css';
 
-@font-face {
-  font-family: SF-Pro-display;
-  src: url('../assets/Fonts/SFPRODISPLAYREGULAR.OTF');
-}
-
 body {
   padding: 0;
   margin: 0;
