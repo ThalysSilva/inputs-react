@@ -39,7 +39,7 @@ export default function Home() {
         className=" flex flex-col xl:grid xl:grid-cols-3 gap-4 h-fit"
       >
         <Input required labelString={"Default Input"} />
-        <InputNumber isRequired label={"Input number"} />
+        <InputNumber showValidationBar isRequired label={"Input number with validation bar"} />
         <InputEmail isRequired label={"E-mail"} />
         <InputPassword
           label={"Input Password With Icon"}

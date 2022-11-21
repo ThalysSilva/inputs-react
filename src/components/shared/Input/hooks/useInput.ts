@@ -27,7 +27,7 @@ export function useInput({
   inputId,
 }: Props) {
   const fillColor = {
-    white: 'bg-white',
+    white: 'bg-gray-300',
     green: 'bg-alerts-green',
     red: 'bg-alerts-red',
   };
