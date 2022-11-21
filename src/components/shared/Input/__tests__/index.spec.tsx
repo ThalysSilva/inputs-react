@@ -104,16 +104,8 @@ describe(Input.name, () => {
         await waitFor(() => expect(mockInputConfigToTest.handleRightIconClick).toHaveBeenCalled());
     });
 
-    it('Should display validationBar if is required', () => {
+    it('Should NOT display validationBar if is required', () => {
         const mockInputConfigToTest: InputProps = {...mockInputDefaultConfig, required: true};
-
-        setup(mockInputConfigToTest);
-
-        expect(screen.getByTestId('validationBar')).toBeInTheDocument();
-    });
-
-    it('Should NOT display validationBar if is not required', () => {
-        const mockInputConfigToTest: InputProps = {...mockInputDefaultConfig};
 
         setup(mockInputConfigToTest);
 
@@ -155,11 +147,11 @@ describe(Input.name, () => {
         input.blur();
 
         await waitFor(() =>
-            expect(inputContainer.classList.contains('border-primary-white')).toBe(true),);
+            expect(inputContainer.classList.contains('border-borderColor')).toBe(true),);
         await waitFor(() => expect(!!input.validationMessage).toBe(true));
     });
 
-    it('Should display border red if hightlightBorderError is enabled if validateResponse.reason is empty', async () => {
+    it('Should display border default if hightlightBorderError is enabled if validateResponse.reason is empty', async () => {
         const mockInputConfigToTest: InputProps = {
             ...mockInputDefaultConfig,
             highlightBorderError: true,
@@ -176,7 +168,7 @@ describe(Input.name, () => {
         input.focus();
 
         await waitFor(() =>
-            expect(inputContainer.classList.contains('border-primary-white')).toBe(true),);
+            expect(inputContainer.classList.contains('border-borderColor')).toBe(true),);
         await waitFor(() => expect(!!input.validity.customError).toBe(false));
     });
 
@@ -303,28 +295,13 @@ describe(Input.name, () => {
         await waitFor(() => expect(validationBar).not.toBeInTheDocument());
     });
 
-    it('Should display validation bar if required is false and ValidatorFunctions has function', async () => {
+    it('Should display validation bar if required is false and ValidatorFunctions has function and validationBar is true', async () => {
         const {validateEmail} = useValidator();
 
         const mockInputConfigToTest: InputProps = {
             ...mockInputDefaultConfig,
             required: false,
-            validateFunctions: [validateEmail],
-        };
-
-        setup(mockInputConfigToTest);
-
-        const validationBar = screen.queryByTestId('validationBar');
-
-        await waitFor(() => expect(validationBar).toBeInTheDocument());
-    });
-
-    it('Should display validation bar if required is false and ValidatorFunctions has function', async () => {
-        const {validateEmail} = useValidator();
-
-        const mockInputConfigToTest: InputProps = {
-            ...mockInputDefaultConfig,
-            required: false,
+            showValidationBar: true,
             validateFunctions: [validateEmail],
         };
 
