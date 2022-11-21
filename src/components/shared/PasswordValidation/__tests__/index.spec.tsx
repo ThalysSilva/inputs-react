@@ -1,13 +1,13 @@
 import React from 'react';
 import {render} from '@testing-library/react';
 
-import {PasswordValidationModern} from '..';
+import {PasswordValidation} from '..';
 import config from '../../../../config';
 
-describe(PasswordValidationModern.name, () => {
+describe(PasswordValidation.name, () => {
     const {passwordValidation, string} = config.messages.validations;
 
-    const setup = (value: string) => render(<PasswordValidationModern passwordValue={value} />);
+    const setup = (value: string) => render(<PasswordValidation passwordValue={value} />);
     it('Should, when typing JOnny&D33p, make all elements valid', () => {
         setup('JOnny&D33p');
 

@@ -2,7 +2,7 @@ import config from "../../../../config";
 import { useValidator } from "../../../../validators/hooks/useValidator";
 import { ValidatorFunction } from "../../../../validators/types";
 
-export function usePasswordValidationModern() {
+export function usePasswordValidation() {
   const { passwordValidation } = config.messages.validations;
   const {
     sequencialSameLetterUppercaseRegex,

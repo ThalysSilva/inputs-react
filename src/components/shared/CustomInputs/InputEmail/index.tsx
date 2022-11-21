@@ -16,6 +16,7 @@ interface InputEmailProps {
   dataTestId?: string;
   emailName?: string;
   className?: string;
+  label?: string;
   id?: string;
 }
 
@@ -30,12 +31,14 @@ export function InputEmail({
   onLeftIcon,
   dataTestId,
   className,
+  label,
   id,
 }: InputEmailProps) {
   const { ValidatorFunctionArray } = useInputEmail(validatorFunctions);
 
   return (
     <Input
+      labelString={label}
       validateFunctions={ValidatorFunctionArray}
       showValidationBar={showValidationBar}
       autoComplete={autoComplete}

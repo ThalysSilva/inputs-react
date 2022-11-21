@@ -8,9 +8,9 @@ import { Input } from '../../Input';
 
 interface InputPasswordProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  autoComplete?: 'on' | 'off' | 'new-password';
   validateFunctions?: ValidatorFunction[];
   highlightBorderError?: boolean;
-  autoComplete?: 'on' | 'off' | 'new-password';
   showValidationBar?: boolean;
   onLeftIcon?: ReactElement;
   passwordName?: string;
@@ -19,6 +19,7 @@ interface InputPasswordProps {
   placeholder?: string;
   dataTestId?: string;
   className?: string;
+  label?: string;
   value?: string;
   id?: string;
 }
@@ -35,6 +36,7 @@ export function InputPassword({
   onLeftIcon,
   className,
   onChange,
+  label,
   value,
   id,
 }: InputPasswordProps) {
@@ -51,7 +53,6 @@ export function InputPassword({
           )
         ) : undefined
       }
-      className={className}
       highlightBorderError={highlightBorderError}
       handleRightIconClick={handleShowPassword}
       type={showPassword ? `text` : `password`}
@@ -61,9 +62,11 @@ export function InputPassword({
       placeholder={placeholder}
       onLeftIcon={onLeftIcon}
       dataTestId={dataTestId}
+      className={className}
       required={isRequired}
-      name={passwordName}
+      labelString={label}
       onChange={onChange}
+      name={passwordName}
       maxLength={100}
       value={value}
       id={id}

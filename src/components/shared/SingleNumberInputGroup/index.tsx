@@ -1,6 +1,9 @@
 import React from 'react';
-import {InputNumber} from '../CustomInputs/InputNumber';
+
 import {useSingleNumberInputGroup} from './hook/useSingleNumberInputGroup';
+import {InputNumber} from '../CustomInputs/InputNumber';
+import { Text5 } from '../Texts';
+import { When } from '../When';
 
 type SIngleNumberInputGroupProps = {
     gapBetweenInputs?: number;
@@ -11,6 +14,7 @@ type SIngleNumberInputGroupProps = {
     isRequired?: boolean;
     dataTestId?: string;
     className?: string;
+    label?: string;
 };
 
 export function SingleNumberInputGroup({
@@ -21,7 +25,8 @@ export function SingleNumberInputGroup({
     showTextRed,
     isRequired,
     dataTestId,
-    className
+    className,
+    label,
 }: SIngleNumberInputGroupProps) {
     const inputGroup = [] as JSX.Element[];
     const {autoTab} = useSingleNumberInputGroup(elementsName);
@@ -31,7 +36,7 @@ export function SingleNumberInputGroup({
             <InputNumber
                 className={` 
                     w-9 h-10 rounded-xl
-                    ${showTextGreen ? 'text-alerts-green' : showTextRed ? 'text-alerts-red' : 'text-primary-white'} text-center px-[13px] 
+                    ${showTextGreen ? 'text-alerts-green' : showTextRed ? 'text-alerts-red' : 'text-primary-white'} text-center px-[12px] 
                     ${className ? className : ''}`}
                 dataTestId={`${elementsName}-${count}`}
                 key={`${elementsName}-${count}`}
@@ -40,7 +45,6 @@ export function SingleNumberInputGroup({
                 hideMessageValidation
                 highlightBorderError
                 name={elementsName}
-                hideValidationBar
                 onKeyUp={autoTab}
                 maxLength={1}
                 min={0}
@@ -49,8 +53,13 @@ export function SingleNumberInputGroup({
         );
     }
     return (
+        <div className={'flex flex-col h-full justify-start '}>
+      <When value={label}>
+        <Text5 className={"mb-2 font-semibold"}>{label}</Text5>
+      </When>
         <div className={`flex flex-row gap-${gapBetweenInputs.toString()} w-full`} data-testid={dataTestId}>
             {inputGroup}
+        </div>
         </div>
     );
 }

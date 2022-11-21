@@ -1,19 +1,20 @@
-import React, { KeyboardEvent } from 'react';
+import React, { KeyboardEvent } from "react";
 
-import { useInputNumber } from './hook/useInputNumber';
-import { Input } from '../../Input';
+import { useInputNumber } from "./hook/useInputNumber";
+import { Input } from "../../Input";
 
 interface InputNumberProps {
   onKeyUp?: (e: KeyboardEvent<HTMLInputElement>) => void;
   hideMessageValidation?: boolean;
   highlightBorderError?: boolean;
+  defaultValue?: number | string;
   showValidationBar?: boolean;
   isRequired?: boolean;
   dataTestId?: string;
   className?: string;
   maxLength?: number;
   value?: number;
-  defaultValue?: number | string;
+  label?: string;
   name?: string;
   min?: number;
   max?: number;
@@ -23,7 +24,7 @@ interface InputNumberProps {
 export function InputNumber({
   hideMessageValidation,
   highlightBorderError,
-  name = 'inputNumber',
+  name = "inputNumber",
   showValidationBar,
   defaultValue,
   isRequired,
@@ -31,6 +32,7 @@ export function InputNumber({
   className,
   maxLength,
   onKeyUp,
+  label,
   value,
   min,
   max,
@@ -42,14 +44,15 @@ export function InputNumber({
       hideMessageValidation={hideMessageValidation}
       highlightBorderError={highlightBorderError}
       showValidationBar={showValidationBar}
+      defaultValue={defaultValue}
       dataTestId={dataTestId}
       onChange={handleChange}
       className={className}
       maxLength={maxLength}
       required={isRequired}
-      defaultValue={defaultValue}
+      labelString={label}
       onKeyUp={onKeyUp}
-      type={'number'}
+      type={"number"}
       value={value}
       name={name}
       min={min}
