@@ -15,6 +15,7 @@ import { InputRadio } from "../components/shared/CustomInputs/InputRadio";
 import { Text4, Text5 } from "../components/shared/Texts";
 import { InputCheckbox } from "../components/shared/CustomInputs/InputCheckbox";
 import { Button } from "../components/shared/Button";
+import { InputFile } from "../components/shared/CustomInputs/InputFile";
 
 export default function Home() {
   const idNewPasswordField = "newPassword";
@@ -103,6 +104,7 @@ export default function Home() {
             </InputCheckbox>
           </div>
         </div>
+        <InputFile/>
         <div className={'flex col-span-3 justify-center mt-3'}>
           <Button className="flex w-full justify-center">
             <Text4 className="text-white-full">{"Submit"}</Text4>
