@@ -1,21 +1,21 @@
 import React from "react";
 
 import { InputNumberWithSpinner } from "../components/shared/CustomInputs/InputNumberWithSpinner";
+import { InputAutocomplete } from "../components/shared/CustomInputs/InputAutocomplete";
 import { SingleNumberInputGroup } from "../components/shared/SingleNumberInputGroup";
 import { InputPassword } from "../components/shared/CustomInputs/InputPassword";
+import { InputCheckbox } from "../components/shared/CustomInputs/InputCheckbox";
 import { PasswordValidation } from "../components/shared/PasswordValidation";
 import { InputNumber } from "../components/shared/CustomInputs/InputNumber";
 import { InputEmail } from "../components/shared/CustomInputs/InputEmail";
+import { InputRadio } from "../components/shared/CustomInputs/InputRadio";
+import { InputFile } from "../components/shared/CustomInputs/InputFile";
+import { Text4, Text5 } from "../components/shared/Texts";
+import { Button } from "../components/shared/Button";
 import { useHome } from "../hooks/pageHome/useHome";
 import { Input } from "../components/shared/Input";
 import LockIcon from "../assets/icon/Lock";
 import Head from "next/head";
-import { InputAutocomplete } from "../components/shared/CustomInputs/InputAutocomplete";
-import { InputRadio } from "../components/shared/CustomInputs/InputRadio";
-import { Text4, Text5 } from "../components/shared/Texts";
-import { InputCheckbox } from "../components/shared/CustomInputs/InputCheckbox";
-import { Button } from "../components/shared/Button";
-import { InputFile } from "../components/shared/CustomInputs/InputFile";
 
 export default function Home() {
   const idNewPasswordField = "newPassword";
