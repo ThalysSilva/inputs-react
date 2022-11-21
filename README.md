@@ -1,6 +1,6 @@
 ## Inputs React
 
-Esse projeto é para compartilhar meus componentes de autoria própria utilizando o Input, e demonstrar com esses inputs minha capacidade tecnica.
+Esse projeto é para compartilhar componentes de minha autoria, utilizando o Input tag do html e ferramentas do próprio React, e assim, demonstrar com esses inputs minha capacidade técnica.
 Componentes inputs que estão sendo exibidos nesse projeto:
 - Padrão
 - Número
