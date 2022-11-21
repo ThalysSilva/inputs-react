@@ -1,5 +1,5 @@
-import { Text } from '@chakra-ui/react';
 import React from 'react';
+import { Text4 } from '../../Texts';
 import { useFileInput } from './hooks/useInputFile';
 
 type Props = {
@@ -20,7 +20,7 @@ export function InputFile({ id, onSetFile }: Props) {
         Choose file
       </button>
       <div className="flex flex-1 items-center">
-        <Text lineHeight={5}>{file?.name}</Text>
+        <Text4>{file?.name}</Text4>
       </div>
     </div>
   );
