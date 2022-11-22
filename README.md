@@ -27,7 +27,7 @@ Segue o link do projeto na vercel: https://inputs-react.vercel.app
 
 This project is to share my own authored components using Input, and demonstrate my technical capacity with these inputs.
 Component entries that are showing in this project:
-- default
+- Default
 - Number
 - Email
 - Password
